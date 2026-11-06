@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#fff0f6">
+  <meta name="color-scheme" content="light">
+  <title>Birthday Gift ❤️</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <section id="password-screen">
+    <img class="screen-gif" src="MMA.gif" alt="">
+
+    <div class="password-card">
+      <div class="heart-icon">♡</div>
+      <h1>A Little Surprise</h1>
+      <p>Enter our special code ♥️</p>
+
+      <form id="password-form">
+        <input
+          id="password-input"
+          type="password"
+          placeholder="Enter password"
+          autocomplete="off"
+          required
+        >
+        <button type="submit" class="main-button">Unlock ❤️</button>
+        <p id="password-error" hidden>Wrong password, try again 💔</p>
+      </form>
+    </div>
+  </section>
+
+  <main id="welcome-screen" class="welcom" hidden>
+    <img class="screen-gif" src="MMA.gif" alt="">
+    <div class="welcome-heart">♥️</div>
+    <h1>Happy Birthday 🎂</h1>
+    <p>To My Pretty Girl ❤️</p>
+    <button id="openBtn" class="main-button">Open 💝</button>
+  </main>
+
+  <section id="flower-screen" hidden>
+    <div class="flower-message">A little Gift, just for you 🌺</div>
+    <img src="MN.gif" alt="A flower opening">
+    <button id="flower-next" class="main-button">Continue ♡</button>
+  </section>
+
+  <section id="book-screen" hidden>
+
+    <img class="book-background" src="Mn.jpg" alt="">
+
+    <p class="book-hint">Tap the cover to open your little book ♡</p>
+
+    <div class="book-container" id="book-container">
+
+      <div
+        class="book-cover"
+        id="book-cover"
+        tabindex="0"
+        role="button"
+        aria-label="Open the book"
+        aria-expanded="false"
+      >
+        <div class="cover-decoration">♡</div>
+        <h2>For You</h2>
+        <p>A Little Book of Love</p>
+        <div class="cover-flower">🌺</div>
+        <span class="cover-bottom">🌹 Made with Love</span>
+      </div>
+
+      <div class="book-content" id="book-content">
+
+        <div class="book-spread spread-one" id="spread-1">
+
+          <article class="book-page right-page">
+            <span class="page-number">01</span>
+            <h2>To My Pretty Girl ♡</h2>
+
+            <div class="lined-message">
+              <p>Every beautiful story has a beginning...</p>
+              <p>This little book is made just for you.</p>
+              <p>You make every moment more special.</p>
+            </div>
+
+            <div class="page-flower">🌺</div>
+          </article>
+
+          <article class="book-page left-page songs-page">
+            <h2>Our Songs ♡</h2>
+
+            <div class="music-card">
+              <img
+                id="song-cover"
+                class="song-cover"
+                src="Re.jpg"
+                alt="red flower"
+              >
+
+              <div class="song-info">
+                <h3 id="song-title">Our First Song ♡</h3>
+                <p id="song-artist">A song just for you</p>
+              </div>
+
+              <input
+                id="song-progress"
+                class="song-progress"
+                type="range"
+                min="0"
+                max="100"
+                value="0"
+                aria-label="Song progress"
+              >
+
+              <div class="song-times">
+                <span id="song-current-time">0:00</span>
+                <span id="song-duration">0:00</span>
+              </div>
+
+              <div class="song-controls">
+
+                <button id="song-shuffle" type="button"
+                  aria-label="Shuffle" aria-pressed="false">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M16 3h5v5M4 7h2.5c5 0 6 10 11 10H21M17 14l4 3-4 3M4 17h2.5c2 0 3.5-2 4.5-4M16 3l5 3M17 3h4" />
+                  </svg>
+                </button>
+
+                <button id="song-previous" type="button"
+                  aria-label="Previous song">⏮</button>
+
+                <button id="song-play" class="song-play" type="button"
+                  aria-label="Play">▶</button>
+
+                <button id="song-next" type="button"
+                  aria-label="Next song">⏭</button>
+
+                <button id="song-repeat" type="button"
+                  aria-label="Repeat" aria-pressed="false">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M17 2l4 4-4 4M3 11V8a2 2 0 0 1 2-2h16M7 22l-4-4 4-4M21 13v3a2 2 0 0 1-2 2H3" />
+                  </svg>
+                </button>
+
+              </div>
+
+              <audio id="song-audio" preload="metadata"></audio>
+            </div>
+
+            <p class="music-note">Every song reminds me of you ♡</p>
+          </article>
+
+        </div>
+
+        <div class="book-spread spread-two" id="spread-2" hidden>
+
+          <article class="book-page right-page">
+            <span class="page-number">03</span>
+            <h2>A Little More for You ♡</h2>
+
+            <div class="lined-message">
+              <p>You make ordinary days feel special.</p>
+              <p>I hope this little book makes you smile.</p>
+              <p>You deserve beautiful moments, always.</p>
+            </div>
+
+            <div class="page-flower">🌷</div>
+          </article>
+
+          <article class="book-page left-page memories-page">
+            <span class="page-number">04</span>
+            <h2>Our Memories ♡</h2>
+
+            <div class="photo-grid">
+
+              <button class="photo-placeholder" type="button"
+                data-full-image="photo1.jpg"
+                aria-label="تكبير الصورة الأولى">
+                <img src="photo1.jpg" alt="Our memory 1">
+              </button>
+
+              <button class="photo-placeholder" type="button"
+                data-full-image="photo2.jpg"
+                aria-label="تكبير الصورة الثانية">
+                <img src="photo2.jpg" alt="Our memory 2">
+              </button>
+
+              <button class="photo-placeholder" type="button"
+                data-full-image="photo3.jpg"
+                aria-label="تكبير الصورة الثالثة">
+                <img src="photo3.jpg" alt="Our memory 3">
+              </button>
+
+              <button class="photo-placeholder" type="button"
+                data-full-image="photo4.jpg"
+                aria-label="تكبير الصورة الرابعة">
+                <img src="photo4.jpg" alt="Our memory 4">
+              </button>
+
+              <button class="photo-placeholder" type="button"
+                data-full-image="photo5.jpg"
+                aria-label="تكبير الصورة الخامسة">
+                <img src="photo5.jpg" alt="Our memory 5">
+              </button>
+
+              <button class="photo-placeholder" type="button"
+                data-full-image="photo6.jpg"
+                aria-label="تكبير الصورة السادسة">
+                <img src="photo6.jpg" alt="Our memory 6">
+              </button>
+
+            </div>
+          </article>
+
+        </div>
+
+        <div class="book-spread spread-three" id="spread-3" hidden>
+          <div class="end-cover">
+            <div class="end-decoration">✿ ♡ ✿</div>
+            <div class="end-flower">🌸</div>
+            <h2>The End ♡</h2>
+
+            <p>
+              Every little page has a story, and every story becomes
+              more beautiful with someone special. 💗
+            </p>
+
+            <div class="end-divider">✧ ── ♡ ── ✧</div>
+            <div class="end-flower">🎀</div>
+            <p class="end-signature">Made with love, just for you ♡</p>
+            <div class="end-flower">🌷</div>
+            <div class="end-decoration">♡ ✧ ♡ ✧ ♡</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="page-controls">
+      <button id="prevPage" type="button">← Previous</button>
+      <span id="page-status">Page 1 of 3</span>
+      <button id="nextPage" type="button">Next →</button>
+    </div>
+
+    <!-- Final Question -->
+    <section id="final-question" hidden>
+      <div class="final-question-card">
+        <div class="final-question-heart">♡</div>
+
+        <h2>One Last Question...</h2>
+
+        <p>Would you like to see one more surprise? ❤️</p>
+
+        <div class="final-question-buttons">
+          <button id="final-yes" type="button">Yes ❤️</button>
+          <button id="final-no" type="button">No 💔</button>
+        </div>
+
+        <p id="no-message" hidden>
+          Are you sure? 🥺 I made something special just for you...
+        </p>
+      </div>
+    </section>
+
+    <section id="special-surprise" hidden>
+      <div class="special-surprise-content">
+
+        <div class="special-hearts">♡ ♥ ♡</div>
+
+        <h1>My Special Girl ❤️</h1>
+
+        <p>
+          You are one of the most beautiful parts of my life.
+          I hope you always remember how special you are to me.
+          You deserve all the happiness in the world. ♡
+        </p>
+
+        <div class="special-divider">✧ ── ♡ ── ✧</div>
+
+        <div class="special-song-card">
+          <h2>A Song Just for You ♡</h2>
+
+          <audio
+            id="special-audio"
+            controls
+            preload="metadata"
+          ></audio>
+        </div>
+
+        <div class="special-hearts">♡ ✧ ♥ ✧ ♡</div>
+
+        <!-- يظهر قسم الأسئلة بعد الضغط على الزر -->
+        <button id="open-love-questions" class="main-button questions-open-button" type="button">
+          I Have Some Questions for You ❤️
+        </button>
+
+        <section id="love-questions" class="love-questions" hidden aria-live="polite">
+          <div class="questions-divider">✧ ── ♡ ── ✧</div>
+          <div class="questions-heart">♡</div>
+          <h2>Some Questions for You ♡</h2>
+          <p class="questions-intro">A few little questions from my heart... 💗</p>
+
+          <div class="question-box">
+            <span id="question-counter" class="question-counter"></span>
+            <h3 id="question-text"></h3>
+            <div id="answer-options" class="answer-options"></div>
+            <p id="question-status" class="question-status" role="status" aria-live="polite"></p>
+            <button id="next-love-question" class="main-button next-question-button" type="button" hidden>
+              Next Question ♡
+            </button>
+          </div>
+        </section>
+
+      </div>
+    </section>
+
+  </section>
+
+  <div
+    id="photo-lightbox"
+    class="photo-lightbox"
+    hidden
+    role="dialog"
+    aria-modal="true"
+    aria-label="عرض الصورة المكبرة"
+  >
+    <button
+      type="button"
+      class="photo-lightbox-close"
+      aria-label="إغلاق الصورة"
+    >×</button>
+
+    <img id="photo-lightbox-image" src="" alt="صورة مكبرة">
+  </div>
+
+  <script src="Script.js"></script>
+  <script src="song-player.js"></script>
+
+</body>
+</html>

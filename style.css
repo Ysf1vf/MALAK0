@@ -1,0 +1,1162 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Fredoka:wght@400;500;600;700&display=swap');
+
+:root {
+    --pink: #8b0000;
+    --dark-pink: #5c0000;
+    --pale-pink: #1a0808;
+    --paper: #151515;
+    --ink: #f2dddd;
+    --red: #8b0000;
+}
+
+* {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html {
+    min-height: 100%;
+    overscroll-behavior: none;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    padding: 20px 14px 35px;
+    font-family: 'Quicksand', sans-serif;
+    color: var(--ink);
+    background:
+        radial-gradient(circle at 15% 20%, #350000 0, transparent 32%),
+        radial-gradient(circle at 85% 80%, #240000 0, transparent 35%),
+        linear-gradient(135deg, #050505 0%, #160303 48%, #260000 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-x: hidden;
+    overscroll-behavior-y: none;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+    touch-action: manipulation;
+}
+
+.main-button,
+.page-controls button {
+    border: 1px solid #a00000;
+    border-radius: 25px;
+    padding: 12px 23px;
+    color: #fff;
+    background: linear-gradient(135deg, #8b0000, #380000);
+    box-shadow: 0 6px 15px #00000080;
+    font-weight: 700;
+    transition: transform .2s, box-shadow .2s;
+}
+
+.main-button:active,
+.page-controls button:active {
+    transform: scale(.97);
+}
+
+#password-screen,
+#flower-screen,
+.welcom {
+    width: 100%;
+    max-width: 420px;
+    text-align: center;
+    animation: appear .55s ease both;
+}
+
+#password-screen,
+#welcome-screen {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    max-width: none;
+    min-height: 100vh;
+    min-height: 100dvh;
+    margin: 0;
+    padding: 24px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    isolation: isolate;
+    background:
+        radial-gradient(circle at 15% 20%, #350000 0, transparent 35%),
+        linear-gradient(135deg, #050505, #190000 65%, #350000) !important;
+    text-align: center;
+    z-index: 100;
+}
+
+#password-screen > .screen-gif,
+#welcome-screen > .screen-gif {
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    max-height: none;
+    object-fit: cover;
+    object-position: center;
+    z-index: -1;
+    border-radius: 0;
+    pointer-events: none;
+}
+
+.password-card {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 420px;
+    padding: 30px 23px;
+    border: 1px solid #650000;
+    border-radius: 28px;
+    background: rgba(12, 12, 12, .88);
+    color: #f2dddd;
+    box-shadow: 0 15px 45px #00000080;
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+}
+
+.heart-icon,
+.welcome-heart {
+    font-size: 50px;
+    color: #a00000;
+    animation: heartbeat 1.7s infinite;
+}
+
+.password-card h1,
+.welcom h1 {
+    font-family: 'Fredoka', sans-serif;
+    color: #b00000;
+    margin: 8px 0;
+}
+
+.password-card p,
+.welcom p {
+    line-height: 1.7;
+    color: #f0dddd;
+}
+
+#password-form {
+    display: grid;
+    gap: 13px;
+    margin-top: 20px;
+}
+
+#password-input {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #780000;
+    border-radius: 16px;
+    outline: none;
+    text-align: center;
+    background: #080808;
+    color: #fff;
+}
+
+#password-input:focus {
+    border-color: #a00000;
+    box-shadow: 0 0 0 3px #8b000044;
+}
+
+#password-error {
+    color: #ff5555;
+    margin: 0;
+}
+
+#welcome-screen > :not(.screen-gif) {
+    position: relative;
+    z-index: 1;
+}
+
+.welcom {
+    padding: 28px 10px;
+}
+
+.welcom h1 {
+    font-size: clamp(32px, 8vw, 44px);
+}
+
+.welcom p {
+    font-size: 18px;
+}
+
+#flower-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+}
+
+#flower-screen img {
+    display: block;
+    width: min(75vw, 280px);
+    max-height: 45vh;
+    object-fit: contain;
+    border-radius: 18px;
+}
+
+.flower-message {
+    font-size: 19px;
+    font-weight: 700;
+    color: #b00000;
+}
+
+#book-screen {
+    position: fixed;
+    inset: 0;
+    z-index: 50;
+    width: 100%;
+    max-width: none;
+    height: 100vh;
+    height: 100dvh;
+    min-height: 0;
+    margin: 0;
+    padding: 12px 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    overscroll-behavior: none;
+    isolation: isolate;
+    background: transparent;
+    animation: appear .5s ease both;
+}
+
+.book-background {
+    position: fixed;
+    inset: 0;
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    height: 100dvh;
+    max-width: none;
+    max-height: none;
+    object-fit: cover;
+    object-position: center;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.book-hint,
+.book-container,
+.page-controls {
+    position: relative;
+    z-index: 1;
+}
+
+.book-hint {
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    margin: 0 0 15px;
+    color: #c08080;
+}
+
+.book-container {
+    position: relative;
+    width: 100%;
+    max-width: 700px;
+    margin: auto;
+    aspect-ratio: 1.58/1;
+    min-height: 300px;
+    max-height: 470px;
+    perspective: 1800px;
+    perspective-origin: 50% 50%;
+    isolation: isolate;
+    overflow: visible;
+    background: #111;
+    border-radius: 5px 12px 12px 5px;
+    box-shadow: 0 15px 35px #000000aa;
+}
+
+.book-content {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    perspective: 1800px;
+    transform-style: preserve-3d;
+    overflow: hidden;
+    border-radius: inherit;
+    background: #111;
+}
+
+.book-cover {
+    position: absolute;
+    inset: 0;
+    z-index: 30;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 28px 20px;
+    border: 7px double #600000;
+    border-radius: 9px 18px 18px 9px;
+    color: #fff;
+    background:
+        radial-gradient(circle at 20% 20%, #ffffff12 0 2px, transparent 3px),
+        linear-gradient(135deg, #650000, #300000 60%, #080808);
+    box-shadow: 8px 12px 0 #00000066, 0 20px 45px #00000099;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transform-origin: left center;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transition:
+        transform 1.15s cubic-bezier(.65,0,.25,1),
+        opacity .5s ease,
+        visibility .5s;
+    overflow: hidden;
+}
+
+.book-cover:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 13px;
+    width: 9px;
+    border-left: 2px solid #ffffff35;
+    border-right: 1px solid #ffffff20;
+    pointer-events: none;
+}
+
+.book-cover h2 {
+    font: 600 clamp(38px, 8vw, 52px) 'Fredoka', sans-serif;
+    margin: 12px 0 2px;
+    text-shadow: 0 3px 8px #00000099;
+}
+
+.book-cover p {
+    margin: 5px;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+.cover-decoration {
+    font-size: 37px;
+}
+
+.cover-flower {
+    font-size: 46px;
+    margin-top: 12px;
+}
+
+.cover-bottom {
+    margin-top: 25px;
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+.book-cover.opened {
+    transform: rotateY(-115deg);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.book-spread {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    direction: ltr;
+    transform-style: preserve-3d;
+    background: #111;
+    overflow: hidden;
+}
+
+.book-page {
+    position: relative;
+    width: 50%;
+    height: 100%;
+    min-width: 0;
+    padding: clamp(13px, 3.2vw, 28px);
+    overflow: hidden;
+    background:
+        repeating-linear-gradient(
+            to bottom,
+            transparent 0,
+            transparent 29px,
+            #4a1010 30px,
+            transparent 31px
+        ),
+        #151515;
+    color: #f2dddd;
+    border: 1px solid #3b0808;
+    box-shadow: inset 0 0 18px #00000099;
+}
+
+.book-page h2 {
+    position: relative;
+    font: 600 clamp(17px, 3.4vw, 25px) 'Fredoka', sans-serif;
+    color: #c00000;
+    text-align: center;
+    margin: 8px 0 18px;
+    overflow-wrap: anywhere;
+}
+
+.page-number {
+    position: absolute;
+    top: 9px;
+    right: 12px;
+    font-size: 10px;
+    color: #a56a6a;
+}
+
+.lined-message {
+    position: relative;
+    font-size: clamp(11px, 2.2vw, 15px);
+    line-height: 2;
+    text-align: center;
+    margin-top: 22px;
+    color: #f0dddd;
+}
+
+.lined-message p {
+    margin: 10px 0;
+}
+
+.page-flower {
+    text-align: center;
+    font-size: clamp(25px, 5vw, 42px);
+    margin-top: 15px;
+}
+
+.songs-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 8px 7px !important;
+    min-width: 0;
+    min-height: 0;
+    overflow: hidden;
+    gap: 0;
+}
+
+.songs-page > h2 {
+    flex: 0 0 auto;
+    margin: 0 0 6px !important;
+    font-size: clamp(16px, 3vw, 22px);
+}
+
+.music-card {
+    flex: 1 1 auto;
+    min-height: 0;
+    width: 100%;
+    max-width: 290px;
+    padding: 7px;
+    margin: 0 auto;
+    border: 2px solid #d62828;
+    border-radius: 12px;
+    background: #080808;
+    box-shadow: 0 4px 12px #00000055;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: space-between;
+    gap: 3px;
+    overflow: hidden;
+}
+
+.song-cover {
+    display: block;
+    flex: 1 1 auto;
+    min-height: 0;
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: 9px;
+    border: 1px solid #d62828;
+    background: #080808;
+}
+
+.song-info {
+    flex: 0 0 auto;
+    padding: 3px 1px;
+    overflow: hidden;
+    background: #080808;
+    color: #fff;
+}
+
+.song-info h3 {
+    margin: 2px 0;
+    font: 600 clamp(11px, 2.3vw, 16px) 'Fredoka', sans-serif;
+    overflow-wrap: anywhere;
+    color: #fff;
+}
+
+.song-info p {
+    margin: 2px 0;
+    font-size: clamp(9px, 1.8vw, 11px);
+    color: #eee;
+}
+
+.song-progress {
+    display: block;
+    flex: 0 0 auto;
+    width: 100%;
+    height: 12px;
+    margin: 5px 0 2px;
+    accent-color: #d62828;
+    cursor: pointer;
+}
+
+.song-times {
+    display: flex;
+    flex: 0 0 auto;
+    justify-content: space-between;
+    gap: 8px;
+    font-size: 9px;
+    direction: ltr;
+    color: #fff;
+}
+
+.song-controls {
+    display: flex;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    gap: 0;
+    margin: 3px 0 0;
+    background: #080808;
+}
+
+.song-controls button {
+    display: flex;
+    flex: 1 1 20%;
+    align-items: center;
+    justify-content: center;
+    min-width: 0;
+    min-height: 32px;
+    padding: 3px 0;
+    border: 0;
+    border-radius: 8px;
+    background: transparent;
+    color: #ff3333;
+    font-size: clamp(14px, 3vw, 20px);
+    line-height: 1;
+    box-shadow: none;
+}
+
+.song-controls button:active {
+    transform: scale(.9);
+    color: #fff;
+    background: #d62828;
+}
+
+.song-controls .song-play {
+    font-size: clamp(19px, 4vw, 25px);
+    color: #ff3333;
+}
+
+.song-controls button#song-shuffle,
+.song-controls button#song-repeat {
+    width: 34px;
+    height: 34px;
+    flex: 0 0 34px;
+    padding: 0;
+    border: 0 !important;
+    border-radius: 50%;
+    background: transparent !important;
+    color: #ff3333 !important;
+    box-shadow: none !important;
+    font-size: 19px;
+    line-height: 1;
+}
+
+.song-controls button#song-shuffle svg,
+.song-controls button#song-repeat svg {
+    display: block;
+    width: 23px;
+    height: 23px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.song-controls button#song-shuffle.active,
+.song-controls button#song-repeat.active {
+    background: #d62828 !important;
+    color: #fff !important;
+    box-shadow: 0 3px 8px #00000040 !important;
+}
+
+.music-note {
+    flex: 0 0 auto;
+    margin: 4px 0 0;
+    font-size: 9px;
+    color: #eee;
+}
+
+.memories-page {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    min-height: 0;
+    padding: 8px 7px !important;
+    overflow: hidden;
+}
+
+.memories-page > h2 {
+    flex: 0 0 auto;
+    margin: 0 0 6px !important;
+    font-size: clamp(16px, 3vw, 22px);
+}
+
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: repeat(3, minmax(0, 1fr));
+    gap: clamp(5px, 1.2vw, 10px);
+    margin-top: 5px;
+    flex: 1;
+    min-height: 0;
+    width: 100%;
+}
+
+.photo-placeholder {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-width: 0;
+    min-height: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 2px solid #790000;
+    border-radius: 9px;
+    background: #180606;
+    cursor: zoom-in;
+    box-shadow: 0 2px 7px #00000080;
+}
+
+.photo-placeholder img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .25s ease;
+}
+
+.photo-placeholder:active img {
+    transform: scale(1.04);
+}
+
+.end-cover {
+    width: 100%;
+    height: 100%;
+    padding: 18px 9%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    background: radial-gradient(circle at 50% 50%, #240000 0, #120000 70%, #050505 100%);
+    color: #f2dddd;
+}
+
+.end-cover h2 {
+    font: 600 clamp(27px, 6vw, 42px) 'Fredoka', sans-serif;
+    margin: 0;
+    color: #b00000;
+}
+
+.end-cover > p {
+    max-width: 400px;
+    font-size: clamp(11px, 2.5vw, 15px);
+    line-height: 1.8;
+    margin: 3px 0;
+}
+
+.end-decoration {
+    color: #a00000;
+    letter-spacing: 6px;
+    font-size: clamp(14px, 3vw, 22px);
+}
+
+.end-flower {
+    font-size: clamp(22px, 4vw, 34px);
+}
+
+.end-divider {
+    color: #a00000;
+    font-size: 17px;
+}
+
+.end-signature {
+    font-style: italic;
+}
+
+.flip-sheet {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 50%;
+    z-index: 15;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    pointer-events: none;
+}
+
+.flip-sheet.forward {
+    left: 50%;
+    transform-origin: left center;
+    animation: flipForward .95s cubic-bezier(.55,.08,.25,1) forwards;
+}
+
+.flip-sheet.backward {
+    left: 0;
+    transform-origin: right center;
+    animation: flipBackward .95s cubic-bezier(.55,.08,.25,1) forwards;
+}
+
+.flip-sheet.full-sheet {
+    left: 0;
+    width: 100%;
+}
+
+.flip-sheet.full-sheet.forward {
+    transform-origin: left center;
+}
+
+.flip-sheet.full-sheet.backward {
+    transform-origin: right center;
+}
+
+.flip-face {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    overflow: hidden;
+}
+
+.flip-front {
+    z-index: 2;
+}
+
+.flip-back {
+    transform: rotateY(180deg);
+    z-index: 1;
+}
+
+.flip-face.book-page {
+    width: 100%;
+    max-width: none;
+    height: 100%;
+    flex: none;
+}
+
+.flip-face.end-cover {
+    width: 100%;
+    height: 100%;
+}
+
+@keyframes flipForward {
+    from {
+        transform: rotateY(0);
+    }
+    to {
+        transform: rotateY(-180deg);
+    }
+}
+
+@keyframes flipBackward {
+    from {
+        transform: rotateY(0);
+    }
+    to {
+        transform: rotateY(180deg);
+    }
+}
+
+.page-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin: 20px auto 0;
+}
+
+.page-controls button {
+    padding: 11px 18px;
+    min-width: 115px;
+}
+
+.page-controls button:disabled {
+    opacity: .4;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+#page-status {
+    font-size: 12px;
+    color: #bd7777;
+    font-weight: 700;
+}
+
+#final-question {
+    position: relative;
+    z-index: 5;
+    width: min(92%, 460px);
+    margin: 20px auto;
+    padding: 20px;
+    animation: appear .6s ease both;
+}
+
+.final-question-card {
+    width: 100%;
+    padding: 30px 22px;
+    border: 1px solid #790000;
+    border-radius: 25px;
+    background:
+        radial-gradient(circle at top, #35000055, transparent 65%),
+        rgba(8, 8, 8, .94);
+    box-shadow:
+        0 12px 35px #00000099,
+        inset 0 0 20px #65000022;
+    text-align: center;
+}
+
+.final-question-heart {
+    font-size: 48px;
+    color: #b00000;
+    margin-bottom: 12px;
+    animation: heartbeat 1.7s infinite;
+    text-shadow: 0 0 18px #8b000066;
+}
+
+.final-question-card h2 {
+    font: 600 clamp(23px, 6vw, 32px) 'Fredoka', sans-serif;
+    color: #c00000;
+    margin: 8px 0 14px;
+    text-shadow: 0 3px 10px #000;
+}
+
+.final-question-card p {
+    color: #f2dddd;
+    font-size: 15px;
+    line-height: 1.8;
+    margin: 10px 0 22px;
+}
+
+.final-question-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 20px;
+}
+
+#final-yes,
+#final-no {
+    min-width: 115px;
+    padding: 12px 25px;
+    border: 1px solid #a00000;
+    border-radius: 25px;
+    color: #fff;
+    background: linear-gradient(135deg, #8b0000, #380000);
+    box-shadow: 0 6px 15px #00000080;
+    font-weight: 700;
+    font-size: 15px;
+    transition: transform .2s, box-shadow .2s;
+}
+
+#final-yes:active,
+#final-no:active {
+    transform: scale(.95);
+}
+
+#final-yes {
+    background: linear-gradient(135deg, #a00000, #650000);
+}
+
+#final-no {
+    background: linear-gradient(135deg, #292929, #080808);
+    border-color: #650000;
+}
+
+#no-message {
+    margin: 20px 0 0;
+    padding: 12px;
+    border: 1px solid #650000;
+    border-radius: 14px;
+    background: #25000088;
+    color: #ffbaba;
+    font-size: 14px;
+    line-height: 1.7;
+    animation: appear .35s ease both;
+}
+
+#special-surprise {
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    padding: 18px 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+    animation: appear .8s ease both;
+}
+
+.special-surprise-content {
+    position: relative;
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: 520px;
+    margin: auto;
+    padding: 35px 24px;
+    border: 1px solid #790000;
+    border-radius: 28px;
+    background:
+        radial-gradient(circle at 50% 0%, #45000055, transparent 55%),
+        rgba(5, 5, 5, .94);
+    box-shadow:
+        0 15px 45px #000000bb,
+        inset 0 0 25px #65000022;
+    text-align: center;
+}
+
+.special-hearts {
+    margin-bottom: 16px;
+    color: #b00000;
+    font-size: 30px;
+    letter-spacing: 12px;
+    animation: heartbeat 1.7s infinite;
+}
+
+.special-surprise-content h1 {
+    font: 600 clamp(29px, 8vw, 43px) 'Fredoka', sans-serif;
+    color: #c00000;
+    margin: 12px 0 20px;
+    text-shadow: 0 3px 12px #000;
+}
+
+.special-surprise-content p {
+    color: #f2dddd;
+    font-size: 15px;
+    line-height: 2;
+    margin: 12px 0;
+}
+
+.special-divider {
+    width: 65%;
+    height: 1px;
+    margin: 24px auto;
+    background: linear-gradient(90deg, transparent, #a00000, transparent);
+}
+
+.special-song-card {
+    width: 100%;
+    margin: 25px auto 0;
+    padding: 18px;
+    border: 1px solid #790000;
+    border-radius: 18px;
+    background: #080808;
+    box-shadow: 0 5px 18px #00000088;
+}
+
+.special-song-card h3 {
+    color: #c00000;
+    font: 600 20px 'Fredoka', sans-serif;
+    margin: 0 0 15px;
+}
+
+audio {
+    color-scheme: dark;
+}
+
+#special-audio {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: 42px;
+    accent-color: #d62828;
+    color-scheme: dark;
+    background: #111;
+    border: 1px solid #650000;
+    border-radius: 25px;
+}
+
+.special-bottom-heart {
+    margin-top: 25px;
+    font-size: 32px;
+    color: #a00000;
+    animation: heartbeat 1.7s infinite;
+}
+
+#book-screen:has(#special-surprise:not([hidden])) .book-container {
+    display: none !important;
+}
+
+/* الأسئلة الجديدة: نفس ألوان وخطوط المفاجأة الأصلية */
+
+#open-love-questions {
+    display: block;
+    margin: 25px auto;
+    padding: 13px 24px;
+    border: 1px solid #a83246;
+    border-radius: 25px;
+    background: linear-gradient(135deg, #7b1e32, #3b101c);
+    color: #fff;
+    font-family: 'Fredoka', sans-serif;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    box-shadow: 0 4px 15px rgba(168, 50, 70, 0.25);
+}
+
+#open-love-questions:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 7px 20px rgba(168, 50, 70, 0.4);
+}
+
+#love-questions {
+    width: min(90%, 500px);
+    margin: 25px auto;
+    padding: 25px 20px;
+    border: 1px solid rgba(168, 50, 70, 0.55);
+    border-radius: 20px;
+    background: rgba(20, 10, 14, 0.95);
+    color: #f8e9ec;
+    font-family: 'Quicksand', sans-serif;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
+}
+
+#love-questions[hidden] {
+    display: none !important;
+}
+
+#love-questions h2 {
+    margin-bottom: 15px;
+    color: #e6a0ad;
+    font-family: 'Fredoka', sans-serif;
+    font-size: 25px;
+}
+
+#question-counter {
+    margin-bottom: 15px;
+    color: #c77b8b;
+    font-size: 14px;
+}
+
+#question-text {
+    margin: 20px 0;
+    color: #fff0f3;
+    font-size: 19px;
+    line-height: 1.6;
+    font-weight: 600;
+}
+
+#answer-options {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 20px 0;
+}
+
+#answer-options button {
+    width: 100%;
+    padding: 13px 16px;
+    border: 1px solid #713044;
+    border-radius: 14px;
+    background: #29131b;
+    color: #f8e9ec;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+#answer-options button:hover:not(:disabled) {
+    border-color: #d36b83;
+    background: #4a1c2b;
+    transform: scale(1.02);
+}
+
+#answer-options button:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+}
+
+#question-status {
+    min-height: 24px;
+    margin: 12px 0;
+    color: #e6a0ad;
+    font-size: 14px;
+}
+
+#next-question {
+    margin-top: 12px;
+    padding: 11px 25px;
+    border: none;
+    border-radius: 22px;
+    background: #8b263e;
+    color: white;
+    font-family: 'Fredoka', sans-serif;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+#next-question:hover {
+    background: #b33b58;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 600px) {
+    #love-questions {
+        width: 90%;
+        padding: 20px 15px;
+    }
+
+    #love-questions h2 {
+        font-size: 22px;
+    }
+
+    #question-text {
+        font-size: 17px;
+    }
+
+    #answer-options button {
+        font-size: 14px;
+    }
+}
