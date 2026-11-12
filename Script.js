@@ -28,7 +28,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   specialAudio.src = "حكمه الايام.mp3";
 
-  // عدّل نصوص الأسئلة والاختيارات من هنا فقط.
   const LOVE_QUESTIONS = [
     {
       question: "What's your favorite thing about us? 💗",
@@ -100,7 +99,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const TURN_DURATION = 1000;
 
-  // Password
   passwordForm.addEventListener("submit", (event) => {
     event.preventDefault();
 
@@ -115,13 +113,11 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Welcome screen
   openButton.addEventListener("click", () => {
     welcomeScreen.hidden = true;
     flowerScreen.hidden = false;
   });
 
-  // Flower screen and reset
   flowerNext.addEventListener("click", () => {
     flowerScreen.hidden = true;
     bookScreen.hidden = false;
@@ -179,7 +175,6 @@ document.addEventListener("DOMContentLoaded", () => {
     updateControls();
   });
 
-  // Open book cover
   function openCover() {
     if (coverOpened || isAnimating) return;
 
@@ -206,7 +201,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Page controls
   function updateControls() {
     prevButton.disabled =
       currentPage === 0 || isAnimating || !coverOpened;
@@ -220,7 +214,6 @@ document.addEventListener("DOMContentLoaded", () => {
       `Page ${currentPage + 1} of ${spreads.length}`;
   }
 
-  // Create page flip animation
   function cloneFace(element, extraClass) {
     const clone = element.cloneNode(true);
 
@@ -409,7 +402,6 @@ document.addEventListener("DOMContentLoaded", () => {
     specialSurprise.hidden = false;
   });
 
-  // Show a question
   function renderLoveQuestion() {
     const item = LOVE_QUESTIONS[currentLoveQuestion];
 
@@ -437,7 +429,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Open the questions section
   openLoveQuestionsButton.addEventListener("click", () => {
     openLoveQuestionsButton.hidden = true;
     loveQuestions.hidden = false;
@@ -452,7 +443,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Send the selected answer to Telegram
   answerOptions.addEventListener("click", async (event) => {
     const selectedButton = event.target.closest(".answer-option");
 
@@ -524,7 +514,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Move to next question or finish
   nextLoveQuestionButton.addEventListener("click", () => {
 
     if (currentLoveQuestion < LOVE_QUESTIONS.length - 1) {
@@ -556,14 +545,12 @@ document.addEventListener("DOMContentLoaded", () => {
     nextLoveQuestionButton.hidden = true;
   });
 
-  // Initial page setup
   spreads.forEach((spread, index) => {
     spread.hidden = index !== 0;
   });
 
   updateControls();
 
-  // Photo lightbox
   const photoLightbox =
     document.getElementById("photo-lightbox");
 
