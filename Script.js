@@ -30,27 +30,27 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const LOVE_QUESTIONS = [
     {
-      question: "What's your favorite thing about us? 💗",
+      question: "Was i truly your true love",
       answers: [
-        "Our memories ❤️",
-        "Your smile 🥹",
-        "Everything about us 💕"
+        "Yes stupid",
+        "No",
+        "Maybe"
       ]
     },
     {
-      question: "What's one moment with me that makes you smile? 🌷",
+      question: "Do u hate me?",
       answers: [
-        "Our first moments 🥰",
-        "Our silly laughs 😂",
-        "Every moment together ❤️"
+        "Yeah",
+        "Nope",
+        "Idk"
       ]
     },
     {
-      question: "What would you love us to do together next? ✨",
+      question: "Could u Forgive me oneday aftr a long time? ",
       answers: [
-        "A romantic date 🌹",
-        "A new adventure 🌍",
-        "A cozy day together 🧸"
+        "Yes",
+        "No",
+        "Idk"
       ]
     }
   ];
