@@ -30,14 +30,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const LOVE_QUESTIONS = [
     {
-      question: "Was i truly your true love",
-      answers: [
-        "Yes stupid",
-        "No",
-        "Maybe"
-      ]
-    },
-    {
       question: "Do u hate me?",
       answers: [
         "Yeah",
@@ -51,6 +43,14 @@ document.addEventListener("DOMContentLoaded", () => {
         "Yes",
         "No",
         "Idk"
+      ]
+    },
+    {
+      question: "Was i truly your true love",
+      answers: [
+        "Yes stupid",
+        "No",
+        "Maybe"
       ]
     }
   ];
